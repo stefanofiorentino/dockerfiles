@@ -1,4 +1,4 @@
-FROM lballabio/quantlib
+FROM lballabio/quantlib:trusty
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="An environment with the QuantLib Python module"
 
