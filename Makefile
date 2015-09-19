@@ -1,5 +1,5 @@
 
-TAG=vivid
+TAG=wily
 
 .PHONY: boost quantlib quantlib-python quantlib-notebook testbox devbox
 
