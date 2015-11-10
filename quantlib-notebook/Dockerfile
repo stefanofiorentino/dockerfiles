@@ -2,8 +2,10 @@ FROM lballabio/quantlib-python:trusty
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="An IPython notebook server with the QuantLib Python module available"
 
-RUN apt-get update && \
-    apt-get install -y ipython-notebook python-matplotlib python-pandas
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y ipython-notebook python-matplotlib python-pandas \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
 EXPOSE 8888
 

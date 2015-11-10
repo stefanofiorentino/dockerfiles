@@ -2,9 +2,13 @@ FROM lballabio/quantlib:trusty
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="An environment with the QuantLib Python module"
 
-RUN apt-get update && apt-get install -y python-dev
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y python-dev \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
-ENV quantlib_swig_version=1.6.1
+ARG quantlib_swig_version=1.6.1
+ENV quantlib_swig_version ${quantlib_swig_version}
 
 RUN wget http://downloads.sourceforge.net/project/quantlib/QuantLib/${quantlib_swig_version}/other\ languages/QuantLib-SWIG-${quantlib_swig_version}.tar.gz \
     && tar xfz QuantLib-SWIG-${quantlib_swig_version}.tar.gz \

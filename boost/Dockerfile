@@ -2,11 +2,14 @@ FROM ubuntu:trusty
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="Provide a building environment where the Boost C++ libraries are available"
 
-ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update \
+ && DEBIAN_FRONTEND=noninteractive apt-get install -y build-essential wget libbz2-dev \
+ && apt-get clean \
+ && rm -rf /var/lib/apt/lists/*
 
-RUN apt-get update && apt-get install -y build-essential wget libbz2-dev
-
-ENV boost_version=1.59.0 boost_dir=boost_1_59_0
+ARG boost_version=1.59.0
+ARG boost_dir=boost_1_59_0
+ENV boost_version ${boost_version}
 
 RUN wget http://downloads.sourceforge.net/project/boost/boost/${boost_version}/${boost_dir}.tar.gz \
     && tar xfz ${boost_dir}.tar.gz \
