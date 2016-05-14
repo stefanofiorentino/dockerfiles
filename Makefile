@@ -9,15 +9,15 @@ quantlib-notebook: quantlib-python
 quantlib-python: quantlib
 	cd quantlib-python && docker build -t lballabio/quantlib-python:$(TAG) .
 
-quantlib: boost
+quantlib:
 	cd quantlib && docker build -t lballabio/quantlib:$(TAG) .
 
 boost:
 	cd boost && docker build -t lballabio/boost:$(TAG) .
 
-testbox: boost
+testbox:
 	cd testbox && docker build -t testbox:$(TAG) .
 
-devbox: boost
+devbox:
 	cd devbox && docker build -t devbox:$(TAG) .
 
