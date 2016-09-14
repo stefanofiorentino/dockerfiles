@@ -1,4 +1,4 @@
-FROM ubuntu:xenial
+FROM ubuntu:yakkety
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="Provide a building environment where the Boost C++ libraries are available"
 

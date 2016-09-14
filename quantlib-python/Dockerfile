@@ -1,4 +1,4 @@
-FROM lballabio/quantlib:xenial
+FROM lballabio/quantlib:yakkety
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="An environment with the QuantLib Python module"
 

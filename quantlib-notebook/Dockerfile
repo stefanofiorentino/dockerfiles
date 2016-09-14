@@ -1,4 +1,4 @@
-FROM lballabio/quantlib-python:xenial
+FROM lballabio/quantlib-python:yakkety
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="An IPython notebook server with the QuantLib Python module available"
 

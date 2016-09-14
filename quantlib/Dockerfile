@@ -1,4 +1,4 @@
-FROM lballabio/boost:xenial
+FROM lballabio/boost:yakkety
 MAINTAINER Luigi Ballabio <luigi.ballabio@gmail.com>
 LABEL Description="A building environment where the QuantLib C++ library is available"
 
