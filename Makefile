@@ -1,21 +1,7 @@
 
-.PHONY: boost quantlib quantlib-python quantlib-notebook testbox devbox
+.PHONY: boost
 
-quantlib-notebook: quantlib-python
-	cd quantlib-notebook && docker build -t lballabio/quantlib-notebook .
-
-quantlib-python: quantlib
-	cd quantlib-python && docker build -t lballabio/quantlib-python .
-
-quantlib:
-	cd quantlib && docker build -t lballabio/quantlib .
+all: boost
 
 boost:
-	cd boost && docker build -t lballabio/boost .
-
-testbox:
-	cd testbox && docker build -t testbox .
-
-devbox:
-	cd devbox && docker build -t devbox .
-
+	cd boost && docker build -t boost:local .
