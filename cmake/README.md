@@ -8,4 +8,4 @@ To create a data volume with your boost application:
 
 To test if boost has been installed 
 
-    $> cd /data/app && mkdir build && cd build && cmake ../src && make && ./main
+    $> cd /data/app && mkdir -p build && cd build && cmake ../src && make && ./main
