@@ -11,7 +11,7 @@ ARG cmake_version=3.2
 ARG cmake_dir=cmake-3.2.2
 ENV cmake_version ${cmake_version}
 
-RUN wget wget http://www.cmake.org/files/v${cmake_version}/${cmake_dir}.tar.gz \
+RUN wget http://www.cmake.org/files/v${cmake_version}/${cmake_dir}.tar.gz \
     && tar xf ${cmake_dir}.tar.gz \
     && rm ${cmake_dir}.tar.gz \
     && cd ${cmake_dir} \
