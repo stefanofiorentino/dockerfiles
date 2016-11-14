@@ -1,10 +1,10 @@
 To create the image:
 
-    docker build -t cmake:latest .
+    cd dockerfiles/cmake && docker build -t cmake:latest .
 
 To create a data volume with your boost application:
 
-    docker run --name cmake_local -v $PWD/app:/data/app -it --rm cmake:latest
+    cd dockerfiles/cmake && docker run --name cmake_local -v $PWD/app:/data/app -it --rm cmake:latest
 
 To test if boost has been installed 
 
