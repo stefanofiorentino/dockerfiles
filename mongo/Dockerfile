@@ -6,9 +6,10 @@ COPY ./dump /data/backups/dump
 
 ENTRYPOINT ["/entrypoint.sh"]
 
+RUN mongod --fork --syslog \
+    && cd /data/backups \
+    && mongorestore --db mp $( ls -tr | grep -v "tar.gz" | tail -n 1 )/mp \
+    && ps aux | grep mongod | grep -v grep | awk '{print $2}' | xargs echo kill
+
 EXPOSE 27017
 CMD ["mongod"]
-
-# RUN cd /data/backups && \
-    # mongorestore --db mp $( ls -tr | grep -v "tar.gz" | tail -n 1 )/mp
-    
