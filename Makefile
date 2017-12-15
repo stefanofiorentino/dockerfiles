@@ -1,5 +1,5 @@
 
-.PHONY: boost cmake mongo ubuntu
+.PHONY: boost cmake mongo ubuntu ubuntu_demonize ubuntu_clean
 
 BUILD_DIR=${PWD}
 
